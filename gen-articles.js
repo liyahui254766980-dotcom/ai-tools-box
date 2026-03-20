@@ -501,4 +501,113 @@ writeArticle('ai-meeting-tools.html',
 );
 
 console.log('ai-meeting done');
+
+// =============================================
+// ARTICLE 8: AI Presentation Tools (PPT) - new improved version
+// =============================================
+
+const pptTable = tableSection([
+  {name:'Gamma',feature:'AI PPT生成最强',free:'免费基础版',cn:'⭐⭐⭐⭐',score:9.5},
+  {name:'Beautiful.ai',feature:'设计感最佳',free:'14天试用',cn:'⭐⭐⭐',score:9},
+  {name:'Tome',feature:'故事化演示',free:'免费基础版',cn:'⭐⭐⭐',score:8.5},
+  {name:'WPS AI演示',feature:'国内首选',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'讯飞智文',feature:'科大讯飞出品',free:'免费使用',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'SlideAI',feature:'Google插件',free:'免费使用',cn:'⭐⭐⭐⭐',score:8},
+  {name:'Canva AI',feature:'设计+AI一体化',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Prezi AI',feature:'动态演示',free:'免费基础版',cn:'⭐⭐⭐',score:7.5},
+  {name:'AiPPT',feature:'国产AI PPT工具',free:'免费额度',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'MindShow',feature:'思维导图转PPT',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8},
+]);
+
+const pptTools = [
+  {name:'Gamma',sub:'AI PPT生成的绝对王者',web:'gamma.app',free:'免费基础版',paid:'$10/月（Plus）',aud:'所有人、商务演示',desc:'Gamma是目前<strong class="text-zinc-200">最受欢迎的AI PPT工具</strong>。输入主题或大纲，AI自动生成完整的演示文稿——包括内容、排版、配色和动画。2026年的版本还支持AI生成配图和数据可视化。',pros:['生成效果最专业','支持多种模板风格','AI生成配图功能','一键美化和重新排版','支持导出PDF/PPT'],cons:['免费版有Gamma水印','高级模板需要付费','中文内容质量一般']},
+  {name:'Beautiful.ai',sub:'设计感最强的AI演示工具',web:'beautiful.ai',free:'14天试用',paid:'$12/月（Pro）',aud:'追求设计感的商务用户',desc:'Beautiful.ai以<strong class="text-zinc-200">自动排版</strong>著称——你只需要输入内容，它会自动调整字体、间距、对齐方式，确保每一页都美观专业。适合对设计要求高的商务演示。',pros:['自动排版效果出色','设计感业界最强','模板质量高','智能格式化节省时间'],cons:['14天试用太短','价格偏高','模板数量不如Gamma多']},
+  {name:'Tome',sub:'故事化演示AI工具',web:'tome.app',free:'免费基础版',paid:'$16/月（Pro）',aud:'需要讲故事的演讲者',desc:'Tome把PPT变成<strong class="text-zinc-200">叙事故事</strong>。AI帮你构建演示的叙事结构，配合自动生成的图片和排版，让演讲更有感染力。',pros:['叙事结构独特','AI图片生成集成','操作流畅','分享功能好'],cons:['不适合数据密集型演示','免费版限制较多','中文支持一般']},
+  {name:'WPS AI演示',sub:'国内最易用的AI PPT工具',web:'ai.wps.cn',free:'免费基础版',paid:'WPS会员',aud:'国内WPS用户',desc:'WPS AI演示集成在WPS Office中，<strong class="text-zinc-200">中文一键生成PPT</strong>。输入主题，AI自动生成大纲和内容，支持丰富的中文模板。国内使用零门槛。',pros:['中文生成质量好','与WPS深度集成','模板丰富','国内访问无障碍'],cons:['设计感不如Beautiful.ai','部分高级功能需会员','AI生成速度一般']},
+  {name:'讯飞智文',sub:'科大讯飞AI写作+演示',web:'zhiwen.xfyun.cn',free:'免费使用',paid:'按需付费',aud:'需要生成汇报的国内用户',desc:'讯飞智文是<strong class="text-zinc-200">科大讯飞</strong>推出的AI写作和演示工具。可以基于主题生成完整的汇报PPT，支持多种场景模板（工作汇报、培训方案、商业计划等）。',pros:['中文生成质量好','场景模板丰富','完全免费使用','科大讯飞语音技术背书'],cons:['设计灵活性有限','模板数量不如WPS','自定义选项较少']},
+  {name:'SlideAI',sub:'Google Slides的AI插件',web:'slideai.io',free:'免费使用',paid:'$10/月',aud:'Google Slides用户',desc:'SlideAI是Google Slides的<strong class="text-zinc-200">AI插件</strong>。在Google Slides中直接使用AI生成内容、排版建议和配图推荐。',pros:['与Google Slides无缝集成','免费使用','操作简单','实时协作不变'],cons:['依赖Google Slides','AI功能深度有限','国内需要翻墙']},
+  {name:'Canva AI',sub:'设计+AI一体化平台',web:'canva.com',free:'免费基础版',paid:'$12.99/月（Pro）',aud:'需要设计+演示一体化',desc:'Canva不仅是设计工具，还集成了<strong class="text-zinc-200">AI演示生成</strong>功能。结合Canva丰富的素材库和设计功能，可以快速制作精美演示。',pros:['设计素材库极其丰富','AI+设计一体化','模板质量高','支持多种导出格式'],cons:['PPT专业功能不如专用工具','免费版素材有限','AI生成功能较基础']},
+  {name:'Prezi AI',sub:'动态缩放演示工具',web:'prezi.com',free:'免费基础版',paid:'$10/月（Standard）',aud:'需要动态效果的演讲者',desc:'Prezi以<strong class="text-zinc-200">缩放式动画</strong>著称，AI版本可以自动生成动态演示。不同于传统PPT的线性翻页，Prezi通过缩放和旋转创造沉浸式演示体验。',pros:['动态效果独特','AI生成功能可用','视觉冲击力强','适合创意演讲'],cons:['动态效果不适合所有场景','学习曲线较陡','免费版有限制']},
+  {name:'AiPPT',sub:'国产AI PPT生成工具',web:'aippt.cn',free:'免费额度',paid:'¥19.9/月',aud:'国内用户',desc:'AiPPT是国产<strong class="text-zinc-200">AI一键生成PPT</strong>工具。输入主题或上传文档，AI自动生成完整PPT。支持多种中文模板和风格。',pros:['中文模板丰富','一键生成操作简单','价格实惠','支持文档转PPT'],cons:['设计感一般','高级功能需付费','品牌知名度低']},
+  {name:'MindShow',sub:'思维导图一键转PPT',web:'mindshow.fun',free:'免费基础版',paid:'¥9.9/月起',aud:'已有大纲需要转PPT的用户',desc:'MindShow的核心理念是<strong class="text-zinc-200">先想后做</strong>——用思维导图理清思路，一键转换为PPT演示。适合已经有清晰思路、只需快速做成PPT的场景。',pros:['思维导图转PPT很方便','多种模板风格','操作流程清晰','价格便宜'],cons:['AI内容生成能力弱','模板设计感一般','免费版限制较多']}
+];
+
+const pptBody = pptTable + pptTools.map((t,i) => toolSection(nums[i], t.name, t.sub, t.web, t.free, t.paid, t.aud, t.desc, t.pros, t.cons)).join('\n') + sceneSection([
+  {title:'👉 最强综合PPT工具',desc:'<strong class="text-indigo-400">Gamma</strong> — 生成效果最专业，模板最丰富'},
+  {title:'👉 追求极致设计感',desc:'<strong class="text-indigo-400">Beautiful.ai</strong> — 自动排版业界最强'},
+  {title:'👉 国内免费首选',desc:'<strong class="text-indigo-400">WPS AI演示</strong> 或 <strong class="text-indigo-400">讯飞智文</strong> — 中文生成质量好'},
+  {title:'👉 需要叙事故事化',desc:'<strong class="text-indigo-400">Tome</strong> — 让演示变成故事'},
+  {title:'👉 有大纲直接转PPT',desc:'<strong class="text-indigo-400">MindShow</strong> — 思维导图一键转PPT'},
+  {title:'👉 设计+演示一体化',desc:'<strong class="text-indigo-400">Canva AI</strong> — 素材库丰富，设计灵活'},
+]);
+
+writeArticle('ai-presentation-tools.html',
+  'AI PPT工具推荐：10款最好用的AI自动生成PPT工具对比',
+  '精选10款AI PPT工具，涵盖Gamma、Beautiful.ai、WPS AI等，从一键生成到智能排版，帮你快速制作专业演示文稿。',
+  'AI PPT工具,AI生成PPT,AI演示,Gamma,Beautiful.ai,WPS AI,AI幻灯片',
+  ['AI办公', 'PPT制作'], ['cyan', 'indigo'], '2026-03-20',
+  '做PPT还在一页一页手动排版？AI可以在几分钟内生成一份专业演示文稿——从内容大纲到配色排版全部自动化。本文精选10款AI PPT工具，覆盖国内外主流平台，帮你找到最高效的PPT制作方案。',
+  pptBody,
+  [
+    {href:'ai-office-tools.html', text:'→ AI办公效率工具推荐'},
+    {href:'ai-design-tools.html', text:'→ AI设计工具推荐：12款最好用的AI设计软件'},
+    {href:'ai-writing-tools.html', text:'→ 10款最好用的AI写作工具推荐'},
+  ]
+);
+
+console.log('ai-presentation done');
+
+// =============================================
+// ARTICLE 9: AI Logo Tools
+// =============================================
+const logoTable = tableSection([
+  {name:'Looka',feature:'AI Logo设计最成熟',free:'免费设计预览',cn:'⭐⭐⭐⭐',score:9},
+  {name:'Midjourney',feature:'创意Logo无限可能',free:'有限试用',cn:'⭐⭐⭐',score:9},
+  {name:'Canva AI',feature:'一站式设计平台',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Brandmark',feature:'快速品牌创建',free:'免费预览',cn:'⭐⭐⭐⭐',score:8},
+  {name:'DesignEvo',feature:'模板+AI结合',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'Ideogram',feature:'文字Logo最强',free:'每日免费',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Hatchful',feature:'Shopify出品免费',free:'完全免费',cn:'⭐⭐⭐⭐',score:7.5},
+  {name:'LogoAI',feature:'品牌一站式设计',free:'有限免费',cn:'⭐⭐⭐⭐',score:8},
+  {name:'标小智',feature:'国产AI Logo工具',free:'免费预览',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'TurboLogo',feature:'快速AI生成',free:'免费预览',cn:'⭐⭐⭐⭐',score:7.5},
+]);
+
+const logoTools = [
+  {name:'Looka',sub:'最成熟的AI Logo设计平台',web:'looka.com',free:'免费设计预览',paid:'$20起一次性买断',aud:'创业者、小微企业',desc:'Looka是<strong class="text-zinc-200">最成熟</strong>的AI Logo设计平台。输入品牌名和行业，AI生成多个Logo方案。选好方案后可以进一步调整颜色、字体、布局，最终导出全套品牌素材（名片、信纸、社交媒体封面等）。',pros:['Logo质量专业','可微调所有元素','一次性买断（非订阅）','附送全套品牌素材'],cons:['高级下载需付费','中文品牌名支持一般','模板同质化风险']},
+  {name:'Midjourney',sub:'创意无限的Logo生成',web:'midjourney.com',free:'有限试用',paid:'$10/月起',aud:'设计师、创意品牌',desc:'Midjourney虽然不是专门的Logo工具，但它生成的<strong class="text-zinc-200">创意Logo</strong>往往比专用工具更有设计感。特别适合需要独特视觉风格的创意品牌。',pros:['创意和视觉质量最高','风格无限多样','修改和迭代灵活','适合品牌概念探索'],cons:['需要设计基础来引导','每次生成不保证一致性','需要手动矢量化和清理']},
+  {name:'Canva AI',sub:'一站式设计+Logo生成',web:'canva.com',free:'免费基础版',paid:'$12.99/月',aud:'需要Logo+全套品牌设计的用户',desc:'Canva不仅有AI Logo生成功能，还提供<strong class="text-zinc-200">全套品牌设计</strong>工具——从Logo到名片、社交媒体、宣传物料一站搞定。',pros:['设计素材库丰富','Logo+品牌物料一体化','免费版可用','操作简单'],cons:['AI生成Logo不够专业','免费版素材有限','品牌一致性维护需手动']},
+  {name:'Brandmark',sub:'快速品牌创建工具',web:'brandmark.io',free:'免费预览',paid:'$65一次性买断',aud:'初创企业、个人品牌',desc:'Brandmark专注<strong class="text-zinc-200">快速创建品牌</strong>。输入品牌名和风格偏好，AI生成Logo和品牌配色方案。一次性买断，包含全套品牌文件。',pros:['一次性买断无订阅','品牌配色方案完整','生成速度快','包含多种格式文件'],cons:['价格偏高（$65起）','设计灵活性有限','中文支持一般']},
+  {name:'DesignEvo',sub:'模板+AI结合的Logo工具',web:'designevo.com',free:'免费基础版',paid:'$49.99起',aud:'预算有限的创业者',desc:'DesignEvo结合了<strong class="text-zinc-200">模板库和AI生成</strong>。在10000+模板基础上AI智能调整，兼顾设计质量和个性化。',pros:['模板数量庞大','中文品牌名支持好','AI+模板双模式','价格合理'],cons:['AI生成不够智能','设计感不如Looka','免费版有水印']},
+  {name:'Ideogram',sub:'文字渲染最强的AI绘图',web:'ideogram.ai',free:'每日免费',paid:'$8/月起',aud:'需要文字Logo的设计师',desc:'Ideogram虽然不是Logo专用工具，但它<strong class="text-zinc-200">渲染文字的能力</strong>是AI绘图工具中最强的。适合生成带品牌名的文字Logo和海报。',pros:['文字渲染业界最强','创意性强','每日免费额度大方','支持多种风格'],cons:['不是专用Logo工具','输出需要手动矢量化','英文文字效果最好']},
+  {name:'Hatchful',sub:'Shopify出品的免费Logo工具',web:'hatchful.shopify.com',free:'完全免费',paid:'免费',aud:'预算为零的创业者',desc:'Hatchful是Shopify推出的<strong class="text-zinc-200">完全免费</strong>Logo设计工具。选择行业和风格，AI生成多个Logo方案。简单直接，适合快速起步。',pros:['完全免费无水印','操作极简','下载高质量文件','Shopify品牌背书'],cons:['设计选择有限','AI智能程度低','不支持精细调整']},
+  {name:'LogoAI',sub:'一站式品牌AI设计',web:'logoai.com',free:'有限免费',paid:'$39.99起',aud:'需要全套品牌设计的初创企业',desc:'LogoAI提供<strong class="text-zinc-200">Logo+品牌名+社交媒体头图</strong>的一站式AI设计服务。输入品牌信息，生成完整品牌视觉系统。',pros:['一站式品牌设计','AI建议品牌配色','输出格式丰富','品牌一致性保障'],cons:['价格偏高','设计灵活性有限','中文品牌名效果一般']},
+  {name:'标小智',sub:'国产AI Logo设计工具',web:'biaoxiaozhi.com',free:'免费预览',paid:'¥29起',aud:'国内创业者、小微企业',desc:'标小智是国产<strong class="text-zinc-200">AI Logo设计</strong>工具。支持中文品牌名，提供多种行业模板和风格选择。价格便宜，适合国内用户。',pros:['中文品牌名支持好','价格便宜','操作简单','模板覆盖主要行业'],cons:['设计感不如Looka','模板同质化','高级功能需付费']},
+  {name:'TurboLogo',sub:'快速AI Logo生成器',web:'turbologo.com',free:'免费预览',paid:'$39.99起',aud:'需要快速出Logo的创业者',desc:'TurboLogo提供<strong class="text-zinc-200">快速AI Logo生成</strong>服务。三步完成：输入品牌名→选风格→下载Logo。还支持名片、信纸等品牌物料设计。',pros:['操作三步完成','生成速度快','附带品牌物料','价格合理'],cons:['设计深度不足','模板质量参差不齐','中文支持一般']}
+];
+
+const logoBody = logoTable + logoTools.map((t,i) => toolSection(nums[i], t.name, t.sub, t.web, t.free, t.paid, t.aud, t.desc, t.pros, t.cons)).join('\n') + sceneSection([
+  {title:'👉 专业品牌Logo（一次性买断）',desc:'<strong class="text-indigo-400">Looka</strong>（$20起）或 <strong class="text-indigo-400">Brandmark</strong>（$65起）'},
+  {title:'👉 创意无限的设计师级别Logo',desc:'<strong class="text-indigo-400">Midjourney</strong> — 创意最强，但需要设计基础'},
+  {title:'👉 完全免费方案',desc:'<strong class="text-indigo-400">Hatchful</strong> — Shopify出品，零成本出Logo'},
+  {title:'👉 中文品牌名Logo',desc:'<strong class="text-indigo-400">标小智</strong>（便宜）或 <strong class="text-indigo-400">DesignEvo</strong>（模板多）'},
+  {title:'👉 Logo+品牌物料一站式',desc:'<strong class="text-indigo-400">Canva AI</strong> 或 <strong class="text-indigo-400">LogoAI</strong> — 全套品牌设计'},
+  {title:'👉 文字Logo/品牌名渲染',desc:'<strong class="text-indigo-400">Ideogram</strong> — AI文字渲染最强'},
+]);
+
+writeArticle('ai-logo-tools.html',
+  'AI Logo设计工具推荐：10款最好用的AI Logo生成工具对比',
+  '精选10款AI Logo设计工具，涵盖Looka、Midjourney、Canva等，从免费到专业级，帮你快速设计品牌Logo。',
+  'AI Logo设计,AI生成Logo,Logo制作工具,Looka,Midjourney Logo,AI品牌设计',
+  ['AI设计', '品牌设计'], ['rose', 'pink'], '2026-03-20',
+  '品牌Logo是企业形象的核心。传统找设计师做Logo动辄几千上万，而AI Logo工具可以在几分钟内生成专业级的品牌标识。本文精选10款AI Logo工具，从免费方案到专业级平台，帮你找到最适合的品牌设计工具。',
+  logoBody,
+  [
+    {href:'ai-design-tools.html', text:'→ AI设计工具推荐：12款最好用的AI设计软件'},
+    {href:'ai-image-tools.html', text:'→ AI绘画工具推荐：10款最好用的AI图片生成工具'},
+    {href:'free-ai-tools.html', text:'→ 免费AI工具大全：50个最实用的AI免费工具'},
+  ]
+);
+
+console.log('ai-logo done');
 console.log('All articles written');
