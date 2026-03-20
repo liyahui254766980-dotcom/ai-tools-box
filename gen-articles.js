@@ -271,4 +271,124 @@ writeArticle('ai-photo-enhancer.html',
 );
 
 console.log('ai-photo-enhancer done');
+
+// =============================================
+// ARTICLE 4: AI Automation Tools
+// =============================================
+const autoTable = tableSection([
+  {name:'Zapier',feature:'自动化连接器老大',free:'100次任务/月',cn:'⭐⭐⭐⭐',score:9},
+  {name:'Make (Integromat)',feature:'可视化自动化',free:'1000次任务/月',cn:'⭐⭐⭐⭐',score:9},
+  {name:'n8n',feature:'开源可自部署',free:'完全免费',cn:'⭐⭐⭐⭐',score:9},
+  {name:'IFTTT',feature:'最简单的自动化',free:'免费基础版',cn:'⭐⭐⭐⭐',score:7.5},
+  {name:'Microsoft Power Automate',feature:'Office生态集成',free:'含于Office 365',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'Dify',feature:'AI工作流搭建',free:'免费版可用',paid:'免费+付费',aud:'企业用户、开发者',desc:'Dify是开源的AI工作流搭建平台，可以创建AI Agent、编排AI工作流，适合企业级应用。',pros:['开源免费','支持多种AI模型','可视化工作流编排','支持RAG知识库'],cons:['需要一定技术基础','中文文档有限','部署需要服务器']},
+  {name:'Coze (扣子)',feature:'字节AI Bot搭建',free:'免费使用',paid:'免费',aud:'国内用户、无代码开发者',desc:'字节跳动推出的AI Bot搭建平台，可以零代码创建AI智能体，支持插件、工作流和知识库。',pros:['完全免费','中文友好','支持插件和工作流','可发布到多个平台'],cons:['主要面向国内生态','高级功能有限','商业化尚不明确']},
+  {name:'Activepieces',feature:'开源Zapier替代',free:'开源版免费',cn:'⭐⭐⭐⭐',score:8},
+  {name:'Browser Use',feature:'AI控制浏览器',free:'开源免费',cn:'⭐⭐⭐⭐',score:8},
+  {name:'飞书自动化',feature:'飞书生态集成',free:'免费版可用',cn:'⭐⭐⭐⭐⭐',score:8.5},
+]);
+
+// Fix autoTable - rebuild properly
+const autoTools = [
+  {name:'Zapier',sub:'自动化连接器的行业标杆',web:'zapier.com',free:'100次任务/月',paid:'$19.99/月（Starter）',aud:'所有人、企业用户',desc:'Zapier是最流行的<strong class="text-zinc-200">自动化连接工具</strong>。连接6000+应用，当A应用发生某个事件时自动触发B应用的动作。比如：收到新邮件→自动添加到Notion、新订单→自动发飞书通知。',pros:['支持6000+应用连接','操作简单，零代码','模板库丰富','团队协作功能完善'],cons:['免费版100次/月太少','付费版价格逐年上涨','复杂工作流搭建有一定门槛']},
+  {name:'Make (原Integromat)',sub:'可视化自动化工作流',web:'make.com',free:'1000次任务/月',paid:'$9/月（Core）',aud:'需要复杂工作流的用户',desc:'Make（原Integromat）是Zapier的强力竞争对手。以<strong class="text-zinc-200">可视化场景编辑器</strong>著称，可以搭建更复杂的自动化工作流。免费版1000次操作/月，比Zapier大方10倍。',pros:['免费额度慷慨（1000次/月）','可视化工作流编辑器更直观','支持复杂逻辑（条件、循环、过滤）','价格比Zapier便宜'],cons:['学习曲线比Zapier陡','应用集成数量不如Zapier','社区资源较少']},
+  {name:'n8n',sub:'开源可自部署的自动化平台',web:'n8n.io',free:'完全免费（自部署）',paid:'€20/月（Cloud）',aud:'技术用户、需要数据隐私的企业',desc:'n8n是<strong class="text-zinc-200">开源</strong>的自动化平台，可以自己部署在服务器上。支持400+应用集成，可视化编辑器，还支持编写自定义代码节点。',pros:['开源免费，可自部署','数据完全可控','支持自定义代码节点','社区活跃，插件丰富'],cons:['自部署需要技术基础','Cloud版本付费','UI不如Make直观']},
+  {name:'IFTTT',sub:'最简单的If This Then That',web:'ifttt.com',free:'2个Applet免费',paid:'$3.49/月（Pro）',aud:'智能家居、简单自动化',desc:'IFTTT（If This Then That）是最简单的自动化工具。选择一个触发条件（If This）和一个执行动作（Then That），创建自动化规则。特别适合<strong class="text-zinc-200">智能家居</strong>场景。',pros:['极其简单，零门槛','智能家居集成最好','免费版可用','Applet社区丰富'],cons:['免费版只能2个规则','复杂工作流不支持','企业功能缺失']},
+  {name:'Microsoft Power Automate',sub:'Office 365生态自动化',web:'powerautomate.microsoft.com',free:'含于Office 365',paid:'含于Microsoft 365',aud:'Office用户、企业团队',desc:'Power Automate是微软的自动化工具，深度集成在Office 365中。可以自动化Excel处理、Outlook邮件、Teams通知、SharePoint管理等日常工作。',pros:['Office 365深度集成','企业级安全合规','支持RPA（桌面自动化）','国内企业广泛使用'],cons:['非Office生态集成较弱','免费版有流限制','界面不够直观']},
+  {name:'Dify',sub:'开源AI工作流搭建平台',web:'dify.ai',free:'免费版可用',paid:'按量付费',aud:'企业用户、AI应用开发者',desc:'Dify是开源的<strong class="text-zinc-200">AI应用开发平台</strong>。可以可视化编排AI工作流、创建AI Agent、搭建RAG知识库，适合企业快速构建AI应用。',pros:['开源免费','支持多种AI模型','可视化工作流编排','支持RAG知识库'],cons:['需要一定技术基础','自部署需要服务器','中文文档有限']},
+  {name:'Coze (扣子)',sub:'字节跳动AI Bot搭建平台',web:'coze.com',free:'免费使用',paid:'免费',aud:'国内用户、无代码开发者',desc:'Coze是字节跳动推出的<strong class="text-zinc-200">AI Bot搭建平台</strong>。可以零代码创建AI智能体，支持插件、工作流、知识库，并可发布到飞书、豆包等平台。',pros:['完全免费','中文友好','支持插件和工作流','可发布到多个平台'],cons:['主要面向国内生态','高级功能有限','商业化尚不明确']},
+  {name:'Activepieces',sub:'开源的Zapier替代品',web:'activepieces.com',free:'开源版免费',paid:'免费+付费',aud:'需要开源方案的用户',desc:'Activepieces是新兴的<strong class="text-zinc-200">开源自动化平台</strong>，定位为Zapier的开源替代。界面现代，操作简单，支持300+应用集成。',pros:['完全开源免费','界面现代友好','支持自托管','价格透明'],cons:['应用集成数量不如Zapier','社区规模较小','部分高级功能还在开发中']},
+  {name:'Browser Use',sub:'AI控制浏览器执行任务',web:'github.com/browser-use/browser-use',free:'完全免费开源',paid:'免费',aud:'技术用户、需要浏览器自动化的场景',desc:'Browser Use是一个<strong class="text-zinc-200">开源AI浏览器自动化</strong>框架。可以让AI Agent像人一样操作浏览器——点击、输入、滚动、提交表单。适合网页数据采集、自动化测试等场景。',pros:['开源免费','AI自主操作浏览器','支持多种AI模型','灵活可定制'],cons:['需要编程能力','稳定性不如传统自动化工具','还在快速迭代中']},
+  {name:'飞书自动化',sub:'飞书生态内的工作流自动化',web:'open.feishu.cn',free:'免费版可用',paid:'飞书企业版',aud:'国内使用飞书的团队',desc:'飞书内置的<strong class="text-zinc-200">自动化工作流</strong>功能。可以在飞书内创建审批流、通知流、数据同步等自动化规则，与飞书文档、表格、消息等深度集成。',pros:['与飞书深度集成','免费版功能够用','中文界面友好','支持审批流等复杂场景'],cons:['仅限飞书生态','外部应用集成有限','高级功能需要企业版']}
+];
+
+const autoBody = tableSection([
+  {name:'Zapier',feature:'6000+应用连接',free:'100次/月',cn:'⭐⭐⭐⭐',score:9},
+  {name:'Make',feature:'可视化复杂工作流',free:'1000次/月',cn:'⭐⭐⭐⭐',score:9},
+  {name:'n8n',feature:'开源可自部署',free:'完全免费',cn:'⭐⭐⭐⭐',score:9},
+  {name:'Power Automate',feature:'Office生态集成',free:'含于365',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'飞书自动化',feature:'飞书生态内自动化',free:'免费版可用',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'Dify',feature:'AI工作流搭建',free:'免费版可用',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'Coze (扣子)',feature:'AI Bot搭建平台',free:'免费使用',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'IFTTT',feature:'最简单自动化',free:'2个规则免费',cn:'⭐⭐⭐⭐',score:7.5},
+  {name:'Activepieces',feature:'开源Zapier替代',free:'开源版免费',cn:'⭐⭐⭐⭐',score:8},
+  {name:'Browser Use',feature:'AI控制浏览器',free:'完全免费',cn:'⭐⭐⭐⭐',score:8},
+]) + autoTools.map((t,i) => toolSection(nums[i], t.name, t.sub, t.web, t.free, t.paid, t.aud, t.desc, t.pros, t.cons)).join('\n') + sceneSection([
+  {title:'👉 国外主流自动化（零代码）',desc:'<strong class="text-indigo-400">Zapier</strong>（最简单）或 <strong class="text-indigo-400">Make</strong>（更强大更便宜）'},
+  {title:'👉 免费开源方案',desc:'<strong class="text-indigo-400">n8n</strong>（自部署）或 <strong class="text-indigo-400">Activepieces</strong>（界面更友好）'},
+  {title:'👉 国内企业首选',desc:'<strong class="text-indigo-400">飞书自动化</strong>（飞书生态）或 <strong class="text-indigo-400">Power Automate</strong>（Office生态）'},
+  {title:'👉 搭建AI应用/Agent',desc:'<strong class="text-indigo-400">Dify</strong>（开源强大）或 <strong class="text-indigo-400">Coze扣子</strong>（中文免费）'},
+  {title:'👉 智能家居联动',desc:'<strong class="text-indigo-400">IFTTT</strong> — 智能家居场景最强'},
+  {title:'👉 浏览器自动化',desc:'<strong class="text-indigo-400">Browser Use</strong> — AI像人一样操作浏览器'},
+]);
+
+writeArticle('ai-automation-tools.html',
+  'AI自动化工具推荐：10款最好用的工作流自动化工具对比',
+  '精选10款AI自动化工具，涵盖Zapier、Make、n8n、Dify等，从简单连接到AI工作流搭建，帮你实现工作自动化。',
+  'AI自动化,工作流自动化,Zapier,Make,n8n,Dify,Coze,自动化工具',
+  ['AI自动化', '工作流'], ['emerald', 'teal'], '2026-03-20',
+  '每天花2小时做重复性工作？AI自动化工具可以帮你把这些工作变成"自动运行的流水线"。从简单的"收到邮件自动转发"到复杂的"AI分析数据→生成报告→发飞书"，本文精选10款自动化工具，帮你找到最适合的效率倍增器。',
+  autoBody,
+  [
+    {href:'ai-office-tools.html', text:'→ AI办公效率工具推荐'},
+    {href:'ai-chatbot-tools.html', text:'→ AI聊天机器人推荐：10款最好用的AI对话工具'},
+    {href:'free-ai-tools.html', text:'→ 免费AI工具大全：50个最实用的AI免费工具'},
+  ]
+);
+
+console.log('ai-automation done');
+
+// =============================================
+// ARTICLE 5: AI Spreadsheet Tools
+// =============================================
+const sheetTable = tableSection([
+  {name:'ChatExcel',feature:'对话式Excel操作',free:'免费使用',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'Excel AI (Copilot)',feature:'微软官方AI助手',free:'含于Copilot订阅',cn:'⭐⭐⭐⭐⭐',score:9},
+  {name:'Google Sheets AI',feature:'Google表格AI功能',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Rows',feature:'AI优先的电子表格',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Airtable AI',feature:'数据库+AI分析',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8},
+  {name:'Gigasheet',feature:'处理超大数据集',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8},
+  {name:'Numerous.ai',feature:'AI Excel插件',free:'免费额度',cn:'⭐⭐⭐⭐',score:8},
+  {name:'SheetAI',feature:'Google Sheets AI插件',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8},
+  {name:'WPS AI',feature:'国内AI表格助手',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'飞书多维表格AI',feature:'飞书生态AI表格',free:'免费使用',cn:'⭐⭐⭐⭐⭐',score:8.5},
+]);
+
+const sheetTools = [
+  {name:'ChatExcel',sub:'用对话操作Excel',web:'chatexcel.com',free:'免费使用',paid:'免费',aud:'Excel新手、数据处理人员',desc:'ChatExcel是北京大学团队开发的<strong class="text-zinc-200">对话式Excel操作工具</strong>。不需要记公式，直接用自然语言描述需求——"把A列的销售额汇总按地区分组"，AI自动执行操作。',pros:['零公式门槛，对话式操作','中文理解优秀','免费使用','操作直观'],cons:['复杂操作支持有限','大数据集性能一般','功能更新频率不高']},
+  {name:'Excel AI (Microsoft Copilot)',sub:'微软官方的AI表格助手',web:'copilot.microsoft.com',free:'含于Copilot订阅',paid:'$30/月（Copilot Pro）',aud:'Office 365用户、企业团队',desc:'Microsoft Copilot深度集成在Excel中，可以用自然语言<strong class="text-zinc-200">分析数据、生成图表、创建公式、识别趋势</strong>。直接在Excel里问问题，AI基于你的数据回答。',pros:['与Excel深度集成','基于实际数据分析','自动生成图表和公式','企业级安全保障'],cons:['价格较高','需要Microsoft 365订阅','中文功能可能滞后']},
+  {name:'Google Sheets AI',sub:'Google表格的AI辅助功能',web:'sheets.google.com',free:'免费基础版',paid:'Google Workspace $6/月起',aud:'Google生态用户',desc:'Google Sheets内置了AI辅助功能，包括<strong class="text-zinc-200">智能填充、公式建议、自动数据分析</strong>。配合Google Gemini，可以直接在表格中提问获取洞察。',pros:['与Google生态无缝集成','智能填充准确率高','实时协作功能强','免费版功能丰富'],cons:['AI功能不如Copilot深入','大数据集性能一般','国内访问需要翻墙']},
+  {name:'Rows',sub:'AI优先的现代电子表格',web:'rows.com',free:'免费基础版',paid:'$10/月（Pro）',aud:'需要AI集成的团队',desc:'Rows是一个<strong class="text-zinc-200">AI优先</strong>的电子表格工具。内置AI助手可以帮你分析数据、生成公式、创建图表，还能直接从互联网抓取数据。',pros:['AI功能深度集成','可直接抓取互联网数据','现代UI，操作体验好','支持API集成'],cons:['免费版功能限制多','社区和模板不如Excel丰富','价格偏高']},
+  {name:'Airtable AI',sub:'数据库+AI的混合工具',web:'airtable.com',free:'免费基础版',paid:'$20/月（Pro）',aud:'项目管理、数据驱动团队',desc:'Airtable是电子表格和数据库的混合体。AI功能包括<strong class="text-zinc-200">自动分类、智能标签、AI生成字段、自动化工作流</strong>。适合结构化管理复杂数据。',pros:['表格+数据库混合架构','AI自动化能力强','视图丰富（表格、看板、日历等）','模板库丰富'],cons:['免费版记录数限制（1000条）','学习曲线较陡','AI功能需要付费版']},
+  {name:'Gigasheet',sub:'处理超大数据集的AI表格',web:'gigasheet.com',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8,aud:'需要处理大数据的分析师',desc:'Gigasheet专为<strong class="text-zinc-200">大数据集</strong>设计——可以处理Excel无法承载的百万行级别数据。AI功能帮助快速分析、清洗和转换大型数据集。',pros:['支持超大数据集（百万行+）','AI辅助数据清洗','无需编程','云端协作'],cons:['免费版限制较多','功能不如传统电子表格丰富','价格偏高']},
+  {name:'Numerous.ai',sub:'AI驱动的Excel插件',web:'numerous.ai',free:'免费额度',paid:'$10/月',aud:'Excel重度用户',desc:'Numerous.ai是一个<strong class="text-zinc-200">Excel插件</strong>，在Excel内直接调用AI功能：生成公式、解释公式、批量处理数据、提取信息等。',pros:['直接在Excel内使用','AI生成和解释公式','批量处理功能强大','支持GPT-4'],cons:['需要单独安装插件','免费额度有限','需要网络连接']},
+  {name:'SheetAI',sub:'Google Sheets的AI插件',web:'sheetai.app',free:'免费基础版',paid:'$6/月（Pro）',aud:'Google Sheets用户',desc:'SheetAI是Google Sheets的<strong class="text-zinc-200">AI插件</strong>，提供AI生成公式、数据填充、文本提取、批量处理等功能。',pros:['与Google Sheets无缝集成','AI生成公式准确','价格实惠','操作简单'],cons:['依赖Google Sheets','免费版功能有限','国内访问需要翻墙']},
+  {name:'WPS AI',sub:'金山WPS表格AI助手',web:'ai.wps.cn',free:'免费基础版',paid:'WPS会员',aud:'国内WPS用户',desc:'WPS AI集成在WPS表格中，支持<strong class="text-zinc-200">AI公式生成、数据洞察、智能排版</strong>。中文界面，国内用户使用零门槛。',pros:['中文界面友好','与WPS深度集成','国内访问无障碍','免费版功能够用'],cons:['AI功能不如Copilot深入','高级分析能力有限','部分功能需要会员']},
+  {name:'飞书多维表格AI',sub:'飞书生态的AI表格工具',web:'feishu.cn',free:'免费使用',paid:'飞书企业版',aud:'飞书用户、国内团队',desc:'飞书多维表格内置AI功能，包括<strong class="text-zinc-200">AI自动分析、智能汇总、自动化工作流</strong>。与飞书文档、消息、审批等深度集成。',pros:['与飞书生态深度集成','AI自动分析数据','自动化工作流','免费使用'],cons:['仅限飞书生态','复杂分析能力有限','需要团队使用飞书']}
+];
+
+const sheetBody = sheetTable + sheetTools.map((t,i) => toolSection(nums[i], t.name, t.sub, t.web, t.free, t.paid, t.aud, t.desc, t.pros, t.cons)).join('\n') + sceneSection([
+  {title:'👉 不会写Excel公式',desc:'<strong class="text-indigo-400">ChatExcel</strong>（对话式）或 <strong class="text-indigo-400">Numerous.ai</strong>（AI插件生成公式）'},
+  {title:'👉 企业办公深度使用',desc:'<strong class="text-indigo-400">Excel Copilot</strong>（微软生态）或 <strong class="text-indigo-400">WPS AI</strong>（国内生态）'},
+  {title:'👉 需要AI深度集成',desc:'<strong class="text-indigo-400">Rows</strong> — AI优先的现代电子表格'},
+  {title:'👉 处理超大数据',desc:'<strong class="text-indigo-400">Gigasheet</strong> — 百万行数据轻松处理'},
+  {title:'👉 项目管理+数据',desc:'<strong class="text-indigo-400">Airtable</strong> — 表格+数据库混合'},
+  {title:'👉 国内团队协作',desc:'<strong class="text-indigo-400">飞书多维表格</strong> — 与飞书生态完美集成'},
+]);
+
+writeArticle('ai-spreadsheet-tools.html',
+  'AI表格工具推荐：10款最好用的AI电子表格和数据分析工具',
+  '精选10款AI表格工具，涵盖ChatExcel、Excel Copilot、Google Sheets AI等，帮你用AI提升数据处理效率。',
+  'AI表格,AI Excel,AI数据分析,ChatExcel,Excel AI,智能表格',
+  ['AI办公', '数据分析'], ['blue', 'cyan'], '2026-03-20',
+  'Excel公式太难记？数据太多处理不过来？AI表格工具正在改变我们处理数据的方式。从"对话式操作Excel"到"AI自动分析趋势"，本文精选10款AI表格工具，帮你用自然语言取代复杂公式。',
+  sheetBody,
+  [
+    {href:'ai-office-tools.html', text:'→ AI办公效率工具推荐'},
+    {href:'ai-math-tools.html', text:'→ AI数学工具推荐：10款最好用的AI数学解题工具'},
+    {href:'free-ai-tools.html', text:'→ 免费AI工具大全：50个最实用的AI免费工具'},
+  ]
+);
+
+console.log('ai-spreadsheet done');
 console.log('All articles written');
