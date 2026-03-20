@@ -391,4 +391,114 @@ writeArticle('ai-spreadsheet-tools.html',
 );
 
 console.log('ai-spreadsheet done');
+
+// =============================================
+// ARTICLE 6: AI Translation Tools (rewrite/enhance existing or new topic)
+// =============================================
+
+// Actually let's do AI SEO Tools - very relevant to our business
+const seoTable = tableSection([
+  {name:'Surfer SEO',feature:'内容优化最强',free:'7天试用',cn:'⭐⭐⭐',score:9},
+  {name:'Jasper',feature:'AI+SEO内容营销',free:'7天试用',cn:'⭐⭐⭐',score:8.5},
+  {name:'Frase',feature:'AI内容简报+写作',free:'有限免费',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'SE Ranking',feature:'全能SEO工具',free:'免费试用',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'WriterZen',feature:'关键词研究+写作',free:'免费试用',cn:'⭐⭐⭐⭐',score:8},
+  {name:'NeuronWriter',feature:'AI优化内容排名',free:'免费试用',cn:'⭐⭐⭐',score:8},
+  {name:'5118',feature:'国内SEO全能工具',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'爱站SEO工具包',feature:'国内站长必备',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'Keylogs',feature:'中文关键词挖掘',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8},
+  {name:'MarketMuse',feature:'AI内容策略',free:'免费试用',cn:'⭐⭐⭐',score:8},
+]);
+
+const seoTools = [
+  {name:'Surfer SEO',sub:'AI内容优化与排名提升',web:'surferseo.com',free:'7天免费试用',paid:'$89/月（Essential）',aud:'SEO编辑、内容营销团队',desc:'Surfer SEO是当前最流行的<strong class="text-zinc-200">AI内容优化工具</strong>。输入目标关键词，它会分析排名前10的页面，给出内容优化建议（字数、关键词密度、标题结构、NLP术语等）。配合AI写作功能，可以直接生成SEO优化的文章。',pros:['内容评分系统直观','AI直接生成优化内容','NLP术语建议精准','实时SERP分析'],cons:['仅支持英文','价格较高','中文内容支持差']},
+  {name:'Jasper',sub:'AI驱动的SEO内容营销平台',web:'jasper.ai',free:'7天试用',paid:'$49/月（Creator）',aud:'内容营销团队、企业品牌',desc:'Jasper是最成熟的<strong class="text-zinc-200">AI内容营销平台</strong>。支持SEO模式写作，可以训练品牌语音，生成符合品牌调性的SEO内容。适合需要大量产出品牌内容的企业。',pros:['品牌语音训练功能','SEO模式写作','模板丰富','企业级功能完善'],cons:['价格较高','中文支持一般','需要一定SEO知识']},
+  {name:'Frase',sub:'AI内容简报+写作一体化',web:'frase.io',free:'有限免费',paid:'$14.99/月（Solo）',aud:'独立SEO、内容创作者',desc:'Frase以<strong class="text-zinc-200">内容简报</strong>为核心——分析竞争对手页面，提取关键词、主题和结构建议，然后用AI基于简报生成内容。性价比在SEO工具中很高。',pros:['内容简报功能独特','价格实惠','写作+优化一体化','支持多种语言'],cons:['AI写作质量一般','高级功能需要付费','英文优化最强']},
+  {name:'SE Ranking',sub:'全能型SEO工具套件',web:'seranking.com',free:'免费试用',paid:'$55/月（Essential）',aud:'SEO从业者、企业网站',desc:'SE Ranking是一个<strong class="text-zinc-200">全能SEO工具</strong>，包含关键词研究、竞争对手分析、网站审计、排名追踪、反向链接分析等功能。AI功能辅助内容优化建议。',pros:['功能全面（排名追踪+审计+关键词研究）','支持多语言','AI内容优化建议','价格合理'],cons:['中文数据库有限','界面较复杂','AI功能不如专用工具深入']},
+  {name:'5118',sub:'国内最全的SEO大数据平台',web:'5118.com',free:'免费基础版',paid:'¥995/年（VIP）',aud:'国内SEO从业者、站长',desc:'5118是国内<strong class="text-zinc-200">数据最全的SEO平台</strong>。提供关键词挖掘、网站分析、竞争对手分析、流量查询等功能。中文关键词数据库极其丰富。',pros:['中文关键词数据库最全','国内网站数据准确','功能全面','免费版功能可用'],cons:['UI较老旧','移动端体验差','部分功能需要VIP']},
+  {name:'爱站SEO工具包',sub:'国内老牌站长工具',web:'aizhan.com',free:'免费基础版',paid:'按需付费',aud:'国内站长、SEO从业者',desc:'爱站是国内最早的<strong class="text-zinc-200">站长工具</strong>之一。提供网站权重查询、关键词排名查询、反链查询、Whois信息等基础SEO功能。',pros:['老牌可信','基础SEO查询免费','百度权重查询权威','工具齐全'],cons:['AI功能较少','界面老旧','高级功能付费']},
+  {name:'WriterZen',sub:'关键词研究+内容创作',web:'writerzen.net',free:'免费试用',paid:'$27/月（Basic）',aud:'内容创作者、独立SEO',desc:'WriterZen提供<strong class="text-zinc-200">关键词挖掘+主题聚类+AI写作</strong>一体化工具。可以找到低竞争高流量的长尾关键词，然后直接生成对应内容。',pros:['关键词挖掘能力强','主题聚类功能独特','AI写作集成','价格适中'],cons:['中文支持一般','数据量不如大平台','需要一定SEO知识']},
+  {name:'NeuronWriter',sub:'AI优化内容排名工具',web:'neuronwriter.com',free:'免费试用',paid:'€23/月（Bronze）',aud:'内容编辑、SEO从业者',desc:'NeuronWriter帮助<strong class="text-zinc-200">基于NLP优化内容</strong>。分析竞争对手页面，提供内容结构建议、关键词推荐、SEO评分，然后用AI生成或优化内容。',pros:['NLP分析精准','SEO评分直观','AI内容生成质量高','支持多语言'],cons:['中文NLP支持一般','功能深度不如Surfer','需要SEO基础']},
+  {name:'Keylogs',sub:'中文关键词挖掘工具',web:'keylogs.com',free:'免费基础版',paid:'¥299/月',aud:'国内SEO从业者、内容运营',desc:'Keylogs专注<strong class="text-zinc-200">中文关键词挖掘</strong>。提供搜索量、竞争度、趋势等数据，帮助找到有价值的中文长尾关键词。',pros:['中文关键词数据精准','搜索量数据可靠','免费版可用','界面现代'],cons:['仅限中文','功能相对单一','价格偏高']},
+  {name:'MarketMuse',sub:'AI驱动的内容策略平台',web:'marketmuse.com',free:'免费试用',paid:'$149/月（Standard）',aud:'企业内容团队',desc:'MarketMuse使用AI分析你的<strong class="text-zinc-200">内容覆盖度和权威性</strong>。告诉你网站上哪些主题内容不足、哪些有竞争优势，然后用AI生成内容策略。',pros:['内容策略分析专业','AI建议权威度高','内容差距分析独特','适合大型网站'],cons:['价格最高','学习曲线陡','不适合个人用户']}
+];
+
+const seoBody = seoTable + seoTools.map((t,i) => toolSection(nums[i], t.name, t.sub, t.web, t.free, t.paid, t.aud, t.desc, t.pros, t.cons)).join('\n') + sceneSection([
+  {title:'👉 英文SEO内容优化（个人/小团队）',desc:'<strong class="text-indigo-400">Frase</strong>（性价比高）或 <strong class="text-indigo-400">Surfer SEO</strong>（功能最强）'},
+  {title:'👉 企业级内容营销',desc:'<strong class="text-indigo-400">Jasper</strong>（品牌内容）或 <strong class="text-indigo-400">MarketMuse</strong>（内容策略）'},
+  {title:'👉 国内中文SEO',desc:'<strong class="text-indigo-400">5118</strong>（数据最全）+ <strong class="text-indigo-400">爱站</strong>（基础查询免费）'},
+  {title:'👉 中文关键词挖掘',desc:'<strong class="text-indigo-400">Keylogs</strong> — 中文关键词数据精准'},
+  {title:'👉 全能SEO工具',desc:'<strong class="text-indigo-400">SE Ranking</strong> — 排名追踪+审计+关键词研究一体化'},
+  {title:'👉 预算有限的新手',desc:'<strong class="text-indigo-400">5118免费版</strong> + <strong class="text-indigo-400">爱站免费版</strong> — 零成本起步'},
+]);
+
+writeArticle('ai-seo-tools.html',
+  'AI SEO工具推荐：10款最好用的AI搜索引擎优化工具',
+  '精选10款AI SEO工具，涵盖Surfer SEO、Jasper、5118等，从内容优化到关键词研究，帮你用AI提升网站排名。',
+  'AI SEO工具,SEO优化,AI内容优化,关键词研究,Surfer SEO,5118,搜索引擎优化',
+  ['AI营销', 'SEO优化'], ['orange', 'amber'], '2026-03-20',
+  'SEO是网站获取自然流量的核心手段，但传统SEO工作耗时耗力——关键词研究、内容优化、竞争对手分析、排名追踪。AI正在改变这一切。本文精选10款AI SEO工具，从英文到中文，从免费到企业级，帮你找到最适合的SEO效率倍增器。',
+  seoBody,
+  [
+    {href:'ai-writing-tools.html', text:'→ 10款最好用的AI写作工具推荐'},
+    {href:'ai-automation-tools.html', text:'→ AI自动化工具推荐：10款工作流自动化工具'},
+    {href:'free-ai-tools.html', text:'→ 免费AI工具大全：50个最实用的AI免费工具'},
+  ]
+);
+
+console.log('ai-seo done');
+
+// =============================================
+// ARTICLE 7: AI Meeting Tools
+// =============================================
+const meetingTable = tableSection([
+  {name:'飞书妙记',feature:'飞书AI会议记录',free:'免费使用',cn:'⭐⭐⭐⭐⭐',score:9},
+  {name:'腾讯会议AI',feature:'腾讯生态集成',free:'免费基础版',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'Otter.ai',feature:'实时会议转录',free:'300分钟/月',cn:'⭐⭐⭐⭐',score:9},
+  {name:'Fireflies.ai',feature:'AI会议助手',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Fathom',feature:'免费AI会议总结',free:'免费使用',cn:'⭐⭐⭐',score:8.5},
+  {name:'tl;dv',feature:'视频会议录制+AI',free:'免费基础版',cn:'⭐⭐⭐',score:8},
+  {name:'Zoom AI Companion',feature:'Zoom内置AI',free:'含于Zoom',cn:'⭐⭐⭐⭐',score:8.5},
+  {name:'Notta',feature:'多语言AI转写',free:'免费基础版',cn:'⭐⭐⭐⭐',score:8},
+  {name:'通义听悟',feature:'阿里AI转写',free:'免费使用',cn:'⭐⭐⭐⭐⭐',score:8.5},
+  {name:'讯飞听见',feature:'科大讯飞语音转写',free:'免费额度',cn:'⭐⭐⭐⭐⭐',score:8},
+]);
+
+const meetingTools = [
+  {name:'飞书妙记',sub:'飞书生态的AI会议记录',web:'feishu.cn',free:'免费使用',paid:'飞书企业版',aud:'使用飞书的团队',desc:'飞书妙记是飞书内置的<strong class="text-zinc-200">AI会议记录</strong>工具。自动录制会议、实时转写文字、AI生成会议纪要和待办事项。与飞书日历、任务、文档深度集成。',pros:['与飞书生态完美集成','AI自动生成会议纪要','实时转写准确率高','自动提取待办事项'],cons:['仅限飞书生态','高级分析需要企业版','大会议转写偶有延迟']},
+  {name:'腾讯会议AI',sub:'腾讯会议内置AI助手',web:'meeting.tencent.com',free:'免费基础版',paid:'¥288/年（企业版）',aud:'国内使用腾讯会议的团队',desc:'腾讯会议内置AI功能，支持<strong class="text-zinc-200">实时转写、AI总结、智能分段</strong>。国内用户使用门槛最低的会议AI工具之一。',pros:['国内使用最广泛','实时转写中文准确','AI总结功能实用','免费版可用'],cons:['免费版AI功能有限','需要腾讯会议环境','转写偶尔出错']},
+  {name:'Otter.ai',sub:'实时会议转写的标杆',web:'otter.ai',free:'300分钟/月',paid:'$16.99/月（Pro）',aud:'海外用户、需要英文转写',desc:'Otter.ai是<strong class="text-zinc-200">实时会议转录</strong>领域的标杆。可以实时转录会议对话，支持说话人识别、关键词搜索、分享会议记录。与Zoom、Google Meet、Teams集成。',pros:['实时转写速度快','说话人识别准确','与主流视频会议集成','分享和协作功能好'],cons:['中文支持一般','免费版300分钟较少','需要网络连接']},
+  {name:'Fireflies.ai',sub:'AI会议记录+CRM集成',web:'fireflies.ai',free:'免费基础版',paid:'$10/月（Pro）',aud:'销售团队、需要CRM集成的企业',desc:'Fireflies.ai自动记录会议并生成AI摘要。独特之处在于<strong class="text-zinc-200">CRM集成</strong>——可以将会议要点自动同步到Salesforce、HubSpot等。',pros:['CRM集成强大','AI摘要质量高','支持多语言','API功能完善'],cons:['中文转写不够好','免费版限制多','价格偏高']},
+  {name:'Fathom',sub:'完全免费的AI会议助手',web:'fathom.video',free:'免费使用',paid:'免费',aud:'预算有限的个人/小团队',desc:'Fathom是最受欢迎的<strong class="text-zigo-200">免费AI会议工具</strong>。自动记录、转录、生成摘要，完全不收费。支持Zoom、Google Meet、Teams。',pros:['完全免费','AI摘要质量好','支持主流会议平台','操作简单'],cons:['中文支持有限','免费版有会议时长限制','高级功能付费']},
+  {name:'tl;dv',sub:'视频会议录制+AI标注',web:'tldv.io',free:'免费基础版',paid:'$18/月（Pro）',aud:'需要录制和回看会议的团队',desc:'tl;dv专注<strong class="text-zinc-200">视频会议录制和AI标注</strong>。不仅转录文字，还能给视频加时间戳标注，方便回看和分享重点片段。',pros:['视频录制+AI标注','时间戳精准','支持多平台','分享功能好'],cons:['免费版限制较多','中文支持一般','高级功能需要付费']},
+  {name:'Zoom AI Companion',sub:'Zoom内置的AI助手',web:'zoom.us',free:'含于Zoom',paid:'含于Zoom付费版',aud:'Zoom用户',desc:'Zoom AI Companion是<strong class="text-zinc-200">Zoom内置的AI功能</strong>。支持会议摘要、智能章节、邮件草稿等。Zoom用户无需额外安装工具。',pros:['Zoom用户零额外成本','AI摘要功能实用','智能分章便于回看','实时翻译功能'],cons:['仅限Zoom平台','中文功能有限','付费版才能用全部功能']},
+  {name:'Notta',sub:'多语言AI会议转写',web:'notta.ai',free:'免费基础版',paid:'$13.99/月（Pro）',aud:'多语言会议场景',desc:'Notta支持<strong class="text-zinc-200">58种语言</strong>的AI转写。适合有跨语言会议需求的团队，还能翻译会议内容。',pros:['支持58种语言','翻译功能实用','支持音频和视频文件转写','界面友好'],cons:['免费版功能限制多','价格不算便宜','中文转写不如国产工具']},
+  {name:'通义听悟',sub:'阿里云AI转写平台',web:'tingwu.aliyun.com',free:'免费使用',paid:'按量付费',aud:'国内用户、需要批量转写',desc:'通义听悟是阿里云推出的<strong class="text-zinc-200">AI转写和记录</strong>平台。支持实时转写、录音转写、视频转写，中文准确率极高。',pros:['中文转写准确率极高','支持实时和离线转写','阿里云技术背书','免费额度大方'],cons:['仅限中文场景最优','海外语言支持一般','需要阿里云账号']},
+  {name:'讯飞听见',sub:'科大讯飞语音转写',web:'tingjian.iflytek.com',free:'免费额度',paid:'按量付费',aud:'需要专业转写的国内用户',desc:'讯飞听见是<strong class="text-zinc-200">科大讯飞</strong>出品的语音转写服务，以中文语音识别准确率著称。支持会议、访谈、课堂等多种场景。',pros:['中文语音识别准确率最高','支持多种场景','专业服务','品牌可信'],cons:['价格较高','免费额度有限','功能相对单一']}
+];
+
+const meetingBody = meetingTable + meetingTools.map((t,i) => toolSection(nums[i], t.name, t.sub, t.web, t.free, t.paid, t.aud, t.desc, t.pros, t.cons)).join('\n') + sceneSection([
+  {title:'👉 国内团队首选',desc:'<strong class="text-indigo-400">飞书妙记</strong>（飞书生态）或 <strong class="text-indigo-400">腾讯会议AI</strong>（腾讯生态）'},
+  {title:'👉 免费方案',desc:'<strong class="text-indigo-400">Fathom</strong>（完全免费）或 <strong class="text-indigo-400">通义听悟</strong>（中文免费额度大方）'},
+  {title:'👉 英文会议',desc:'<strong class="text-indigo-400">Otter.ai</strong>（实时转写标杆）或 <strong class="text-indigo-400">Fireflies.ai</strong>（CRM集成）'},
+  {title:'👉 专业中文转写',desc:'<strong class="text-indigo-400">讯飞听见</strong> — 中文识别准确率最高'},
+  {title:'👉 多语言会议',desc:'<strong class="text-indigo-400">Notta</strong> — 支持58种语言'},
+  {title:'👉 Zoom用户',desc:'<strong class="text-indigo-400">Zoom AI Companion</strong> — 零额外成本'},
+]);
+
+writeArticle('ai-meeting-tools.html',
+  'AI会议工具推荐：10款最好用的AI会议记录和转写工具',
+  '精选10款AI会议记录工具，涵盖飞书妙记、Otter.ai、Fathom等，从实时转写到AI摘要，帮你高效管理会议。',
+  'AI会议工具,会议记录,语音转写,AI转录,飞书妙记,Otter,Fathom,AI会议',
+  ['AI办公', '会议记录'], ['sky', 'blue'], '2026-03-20',
+  '每次开会都要手动记笔记？会后整理纪要花半天？AI会议工具可以自动记录、转写、生成摘要和待办，让你从"会议记录员"变成"会议参与者"。本文精选10款AI会议工具，覆盖国内外主流平台。',
+  meetingBody,
+  [
+    {href:'ai-office-tools.html', text:'→ AI办公效率工具推荐'},
+    {href:'ai-tts-tools.html', text:'→ AI配音工具推荐：8款最好用的文字转语音工具'},
+    {href:'ai-automation-tools.html', text:'→ AI自动化工具推荐：10款工作流自动化工具'},
+  ]
+);
+
+console.log('ai-meeting done');
 console.log('All articles written');
